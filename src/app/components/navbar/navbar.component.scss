@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+
+.facebook {
+    display: flex;
+}
+
+.facebook a {
+    position: relative;
+    top: 4px;
+    color: grey;
+}
+
+.facebook i {
+    color: grey;
+}
+
+.english {
+    transform: scale(0.7);
+}
+
+.spanish {
+    transform: scale(0.6);
+}
+
+.english:hover {
+    cursor: pointer;
+}
+
+.spanish:hover {
+    cursor: pointer;
+}
+
+button:first-of-type {
+    background-color: transparent;
+    border: none;
+}
+
+select {
+    background-color: transparent;
+    border: none;
+    color: #FFF;
+    font-family: 'Nunito';
+}
+
+select:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+option {
+    color: black;
+    font-family: 'Nunito';
+}
+
+@media screen and (max-width:480px) {
+    .facebook a {
+        display: none;
+    }
+}

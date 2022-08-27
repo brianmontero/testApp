@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+
+.wrapper {
+    width: 50%;
+    height: auto;
+    padding: 20px;
+}
+
+input:focus {
+    box-shadow: none;
+    outline: none;
+    transition: all 0.3s;
+    border: 1px solid black;
+}
+
+label, input, select, option, a, button {
+    font-family: 'Nunito';
+}
+
+select:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+label {
+    display: block;
+    margin-left: 8px;
+    transform: translateY(-2.3em);
+    transform-origin: 0 0;
+    transition: all 0.3s;
+    color: grey;
+    background-color: white;
+    width: fit-content;
+}
+
+input::placeholder {
+    color: transparent;
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label {
+    transform: translateY(-3.7em) scale(0.8);
+}
+
+.name {
+    margin-bottom: .5em;
+}
+
+.name input {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.lastname {
+    margin-bottom: 1em;
+}
+
+.lastname input {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    text-indent: 5px;
+    font-size: 18px;
+}
+
+.email {
+    margin-bottom: 1em;
+}
+
+.email input {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    text-indent: 5px;
+    font-size: 18px;
+    line-height:1px;
+}
+
+.deptos {
+    margin-bottom: 1em;
+}
+
+.deptos select {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    text-indent: 5px;
+    font-size: 18px;
+
+}
+
+.localidadContainer {
+    margin-bottom: 3em;
+}
+
+.localidadContainer select {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    text-indent: 5px;
+    font-size: 18px;
+
+}
+
+.ceidContainer {
+    margin: 1em 0 1em 0;
+}
+
+.ceidContainer input {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    text-indent: 5px;
+}
+
+.checkboxContainer {
+    margin-bottom: 1em;
+}
+
+.checkboxContainer input {
+    width: 20px;
+    height: 20px;
+}
+
+.checkboxContainer a {
+    position: relative;
+    top: -3px;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    margin: 1em 0px 1em 0px;
+}
+
+.buttonContainer button {
+    width: 120px;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    background-color:royalblue;
+    color: #FFF;
+    transition: .2s;
+    font-size: 20px;
+}
+
+.buttonContainer button:hover {
+    background: transparent;
+    border: 1px black solid;
+    color: black;
+}
+
+#ceid[type="number"]::-webkit-outer-spin-button,
+#ceid[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+small {
+    color: red;
+}

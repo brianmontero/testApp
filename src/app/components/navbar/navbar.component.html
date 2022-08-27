@@ -1,0 +1,14 @@
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand">Landing Page</a>
+      <select (change)="seleccionarLenguaje($event)">
+        <option value="" disabled selected>{{ "Lenguaje" | translate }}</option>
+        <option value="en">English</option>
+        <option value="es">Español</option>
+      </select>
+      <div class="facebook">
+        <a>{{"SEGUÍ CONECTADO" | translate }}</a> &nbsp;
+        <i class="fab fa-facebook fa-2x"></i>
+      </div>
+    </div>
+  </nav>

@@ -1,0 +1,82 @@
+<div class="container mt-5 mb-5">
+    <form [formGroup]="form" #localForm="ngForm">
+        <div class="wrapper mx-auto">
+            <div class="name">
+                <input type="text" placeholder="Nombre" id="nombre" formControlName="nombre"
+                [ngStyle]="{'border-color': localForm.submitted && form.get('nombre').errors ? 'red' : '#CCC'}">
+                <label for="nombre">{{ "Nombre" | translate }}</label>
+                <small *ngIf="localForm.submitted && form.get('nombre').errors?.required">
+                    {{ "Este campo es obligatorio" | translate }}
+                </small>
+                <small *ngIf="localForm.submitted && form.get('nombre').errors?.pattern">
+                    {{ "El nombre debe tener al menos dos letras" | translate }}
+                </small>
+            </div>
+            <div class="lastname">
+                <input type="text" placeholder="Apellido" id="apellido" formControlName="apellido"
+                [ngStyle]="{'border-color': localForm.submitted && form.get('apellido').errors ? 'red' : '#CCC'}">
+                <label for="apellido">{{ "Apellido" | translate }}</label>
+                <small *ngIf="localForm.submitted && form.get('apellido').errors?.required">
+                    {{ "Este campo es obligatorio" | translate }}
+                </small>
+                <small *ngIf="localForm.submitted && form.get('apellido').errors?.pattern">
+                    {{ "El apellido debe tener al menos dos letras" | translate }}
+                </small>
+            </div>
+            <div class="email">
+                <input type="text" placeholder="e-Mail" id="email" formControlName="email" 
+                [ngStyle]="{'border-color': localForm.submitted && form.get('email').errors ? 'red' : '#CCC'}"> 
+                <label for="email">e-Mail</label>
+                <small *ngIf="localForm.submitted && form.get('email').errors?.required">
+                    {{ "Este campo es obligatorio" | translate }}
+                </small>
+                <small *ngIf="localForm.submitted && form.get('email').errors?.email">
+                    {{ "El formato de e-Mail no es válido" | translate }}
+                </small>
+            </div>
+            <div class="deptos">
+                <select id="deptos" (change)="getDepto($event)" formControlName="deptos"
+                [ngStyle]="{'border-color': localForm.submitted && form.get('deptos').errors ? 'red' : '#CCC'}">
+                    <option value="" disabled>{{ "Departamento" | translate }}</option>
+                    <option *ngFor="let i of departamentos" [value]="i">{{ i }}</option>
+                </select>
+                <small *ngIf="localForm.submitted && form.get('deptos').value == '' ">
+                    {{ "Eliga una opción" | translate }}
+                </small>
+            </div>
+            <div class="localidadContainer">
+                <select id="localidadInput" formControlName="localidad"
+                [ngStyle]="{'border-color': localForm.submitted && form.get('localidad').errors ? 'red' : '#CCC'}">
+                    <option value="" disabled>{{ "Localidad" | translate }}</option>
+                    <option *ngFor="let i of localidad" [value]="i">{{ i }}</option>
+                </select>
+                <small *ngIf="localForm.submitted && form.get('localidad').value == '' ">
+                    {{ "Eliga una opción" | translate }}
+                </small>
+            </div>
+            <div class="ceidContainer">
+                <input type="number" id="ceid" placeholder="C.I." formControlName="cedula"
+                [ngStyle]="{'border-color': localForm.submitted && form.get('cedula').errors ? 'red' : '#CCC'}">
+                <label for="ceid">{{ "C.I." | translate }}</label>
+                <small *ngIf="localForm.submitted && form.get('cedula').errors?.required">
+                    {{ "Este campo es obligatorio" | translate }}
+                </small>
+                <small *ngIf="localForm.submitted && form.get('cedula').errors?.invalidCI">
+                    {{ "La cédula no es válida" | translate }}
+                </small>
+            </div>
+            <div class="checkboxContainer">
+                <input type="checkbox" formControlName="bases"
+                [ngStyle]="{'border-color': localForm.submitted && form.get('bases').errors ? 'red' : '#CCC'}"> 
+                &nbsp;
+                <a>{{ "Acepto las bases y condiciones" | translate }}</a>
+            </div>
+            <small *ngIf="localForm.submitted && form.get('bases').errors?.required">
+                {{ "Esta condición es necesaria" | translate }}
+            </small>
+            <div class="buttonContainer">
+                <button type="submit">{{ "ENVIAR" | translate }}</button>
+            </div>
+        </div>
+    </form>
+</div>
